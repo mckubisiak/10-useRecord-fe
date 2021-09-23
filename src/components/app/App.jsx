@@ -39,13 +39,18 @@ export default function App() {
     <>
       <button onClick={undo}>undo</button>
       <button onClick={redo}>redo</button>
-      <input
-        type="color"
-        value={current}
-        onChange={({ target }) => record(target.value)}
-      />
+
+      <label>Color Picker
+        <input
+          type="color"
+          value={current}
+          onChange={({ target }) => record(target.value)}
+        />
+      </label>
+
       <div
         style={{ backgroundColor: current, width: '10rem', height: '10rem' }}
+        data-testid="div"
       ></div>
     </>
   );
